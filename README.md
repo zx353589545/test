@@ -19,6 +19,8 @@ proxies:
     - {"type":"socks5","name":"socks5_proxy","server":"127.0.0.1","port":10010,"udp":true}
 proxy-groups:
     - { name: 大机场 Big Airport, type: select, proxies: [http_proxy, socks5_proxy], url: 'http://www.gstatic.com/generate_204', interval: 7200 }
+    - { name: 自动选择, type: select, proxies: [http_proxy, socks5_proxy], url: 'http://www.gstatic.com/generate_204', interval: 7200 }
+    - { name: 故障转移, type: select, proxies: [http_proxy, socks5_proxy], url: 'http://www.gstatic.com/generate_204', interval: 7200 }
 rules:
     - 'DOMAIN,bigairport-sub-6.sbs,DIRECT'
     - 'DOMAIN-SUFFIX,services.googleapis.cn,大机场 Big Airport'
